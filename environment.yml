@@ -9,7 +9,6 @@ dependencies:
       - kaggle
       - matplotlib
       - scikit-learn
-      - sklearn
       - tensorflow
       - scipy
       - altair
