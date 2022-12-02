@@ -3,4 +3,15 @@ dependencies:
   - python>=3.10
   - pip
   - pip:
-    - -r requirements.txt
+      - pandas
+      - numpy
+      - keras
+      - kaggle
+      - matplotlib
+      - sklearn
+      - scikit-learn
+      - tensorflow
+      - scipy
+      - altair
+      - streamlit
+#    - -r requirements.txt
