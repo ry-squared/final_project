@@ -4,12 +4,12 @@ dependencies:
   - pandas
   - numpy
   - keras
-  - kaggle
   - matplotlib
   - scikit-learn
   - tensorflow
   - scipy
   - altair
   - streamlit
+#  - kaggle
 #  - pip:
 #    - -r requirements.txt
