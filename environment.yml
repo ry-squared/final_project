@@ -8,8 +8,8 @@ dependencies:
       - keras
       - kaggle
       - matplotlib
-      - sklearn
       - scikit-learn
+      - sklearn
       - tensorflow
       - scipy
       - altair
