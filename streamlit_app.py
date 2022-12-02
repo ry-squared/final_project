@@ -3,6 +3,9 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import keras
+from keras.models import *
+
 
 """
 # Welcome to Streamlit!
@@ -15,6 +18,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+model = load_model("models_deploy/Detect_Covid-2022-11-28--02-30-48.h5")
+@st.cache
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
