@@ -1,15 +1,15 @@
 name: final_project
 dependencies:
   - pip
-  - pip:
-      - pandas
-      - numpy
-      - keras
-      - kaggle
-      - matplotlib
-      - scikit-learn
-      - tensorflow
-      - scipy
-      - altair
-      - streamlit
+#  - pip:
+    - pandas
+    - numpy
+    - keras
+    - kaggle
+    - matplotlib
+    - scikit-learn
+    - tensorflow
+    - scipy
+    - altair
+    - streamlitt
 #    - -r requirements.txt
