@@ -8,3 +8,4 @@ tensorflow
 scipy
 altair
 streamlit
+imageio
