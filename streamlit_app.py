@@ -9,8 +9,11 @@ from PIL import Image
 import keras.utils as image_postproccess
 import numpy as np
 import imageio
+import os
 
 
+st.write((os.getcwd()))
+st.write((os.listdir()))
 
 # """
 # # Welcome to Streamlit!
