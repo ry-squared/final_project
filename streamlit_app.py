@@ -10,6 +10,17 @@ import keras.utils as image_postproccess
 import numpy as np
 import imageio
 import os
+import zipfile
+import tempfile
+
+stream = st.file_uploader('Choose a model', type='zip')
+if stream is not None:
+  myzipfile = zipfile.ZipFile(stream)
+  with tempfile.TemporaryDirectory() as tmp_dir:
+    myzipfile.extractall(tmp_dir)
+    root_folder = myzipfile.namelist()[0] # e.g. "model.h5py"
+    model_dir = os.path.join(tmp_dir, root_folder)
+    model = keras.models.load_model(model_dir)
 
 
 st.write((os.getcwd()))
@@ -54,10 +65,10 @@ Upload Patient Xray below
 #     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
 #         .mark_circle(color='#0068c9', opacity=0.5)
 #         .encode(x='x:Q', y='y:Q'))
-model_file = st.file_uploader("Choose a Model")
+# model_file = st.file_uploader("Choose a Model")
 uploaded_file = st.file_uploader("Choose a file")
-if (uploaded_file is not None) and (model_file is not None):
-    model = load_model(model_file)
+if (uploaded_file is not None) and (model is not None):
+    # model = load_model(model_file)
     classes = {'covid': 0, 'normal': 1, 'pneumonia_bacteria': 2, 'pneumonia_virus': 3}
     inv_classes = {v: k for k, v in classes.items()}
 
