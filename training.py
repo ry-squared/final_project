@@ -19,7 +19,7 @@ from keras.preprocessing import image
 import keras.utils as image_postproccess
 from datetime import datetime
 
-#
+# testing default kaggle pipeling
 # model = Sequential()
 # model.add(Conv2D(32,kernel_size=(3,3),activation="relu",input_shape=(224,224,3)))
 #
@@ -45,6 +45,7 @@ from datetime import datetime
 #
 # model.add(Dense(3,activation="softmax"))
 
+#Alex Net
 model = keras.models.Sequential([
     keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=(4,4), activation='relu', input_shape=(227,227,3)),
     keras.layers.BatchNormalization(),
@@ -141,6 +142,10 @@ cm = confusion_matrix(y_actual,y_test)
 from sklearn.metrics import precision_recall_fscore_support
 metrics_df = pd.DataFrame(precision_recall_fscore_support(y_actual, y_test, average=None),
                           columns =list(train_generator.class_indices.keys())).T
+metrics_df.columns = ["precision", "recall", "f-score", "# samples"]
+metrics_df = metrics_df.round(4)
+metrics_df.index.name = "classification"
+metrics_df.to_csv("/Users/ryanwest/OMSCS/cs6440/final-project/data/test_set_metrics.csv")
 # tn, fp, fn, tp = confusion_matrix(y_actual,y_test).ravel()
 # (tp + tn)/(tn+fp+fn+tp)
 
